@@ -42,5 +42,14 @@ public class PizzaRestController {
 		return new ResponseEntity<>(pizza, HttpStatus.OK);
 	}
 	
+	@PostMapping
+	public ResponseEntity<Pizza> create(@RequestBody Pizza pizza) {
+		
+		pizzaService.save(pizza);
+		
+		return new ResponseEntity<>(pizza, HttpStatus.OK);
+	}
+	
+	
 
 }

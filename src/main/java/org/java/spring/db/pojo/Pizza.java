@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -88,9 +89,11 @@ public class Pizza {
 	public void setDiscounts(List<Discount> discounts) {
 		this.discounts = discounts;
 	}
+	@JsonProperty("ingredients")
 	public List<Ingredient> getIngredients() {
 		return ingredients;
 	}
+	@JsonIgnore
 	public void setIngredients(List<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
