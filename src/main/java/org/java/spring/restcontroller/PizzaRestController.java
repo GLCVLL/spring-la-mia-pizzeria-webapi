@@ -42,39 +42,5 @@ public class PizzaRestController {
 		return new ResponseEntity<>(pizza, HttpStatus.OK);
 	}
 	
-	@PostMapping
-	public ResponseEntity<Pizza> create(@RequestBody Pizza pizza) {
-		
-		pizzaService.save(pizza);
-		
-		return new ResponseEntity<>(pizza, HttpStatus.OK);
-	}
-	
-	@PutMapping("{id}")
-	public ResponseEntity<Pizza> update(
-			@PathVariable int id,
-			@RequestBody Pizza newPizza) {
-	
-		Pizza pizza = pizzaService.findById(id);
-		
-		pizza.setName(newPizza.getName());
-		pizza.setDescription(newPizza.getDescription());
-		pizza.setPrice(newPizza.getPrice());
-		
-		pizzaService.save(pizza);
-		
-		return new ResponseEntity<>(pizza, HttpStatus.OK);
-	}
-	
-	@DeleteMapping("{id}")
-	public ResponseEntity<Pizza> delete(
-			@PathVariable int id) {
-		
-		Pizza pizza = pizzaService.findById(id);
-		
-		pizzaService.delete(pizza);
-		
-		return new ResponseEntity<>(pizza, HttpStatus.OK); 
-	}
 
 }
