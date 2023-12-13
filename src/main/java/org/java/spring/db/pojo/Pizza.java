@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,7 +39,7 @@ public class Pizza {
     @Positive(message = "Il prezzo deve essere un valore positivo.")
     private float price;
     
-    @OneToMany(mappedBy = "pizza")
+    @OneToMany(mappedBy = "pizza", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Discount> discounts;
     
     @ManyToMany

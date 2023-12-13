@@ -2,6 +2,8 @@ package org.java.spring.db.pojo;
 
 import java.time.LocalDate;
 
+import org.java.spring.dto.PizzaDiscountDTO;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -32,44 +34,52 @@ public class Discount {
 			setTitle(title);
 			setPizza(pizza);
 	 }
-	 
-    // GETTER & SETTER
-	 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public LocalDate getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(LocalDate startDate) {
-		this.startDate = startDate;
-	}
-	public LocalDate getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(LocalDate endDate) {
-		this.endDate = endDate;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public Pizza getPizza() {
-		return pizza;
-	}
-	public void setPizza(Pizza pizza) {
-		this.pizza = pizza;
-	}
-	 
-	@Override
-	public String toString() {
+	 public Discount(PizzaDiscountDTO discountDTO, Pizza pizza) {
+			
+			this(
+				discountDTO.getStartDate(), 
+				discountDTO.getEndDate(), 
+				discountDTO.getTitle(), 
+				pizza
+			);
+		}
 		
-		return "[" + getId() + "] " + getTitle() + " - " + getStartDate() + " - " + getEndDate();
-	} 
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public LocalDate getStartDate() {
+			return startDate;
+		}
+		public void setStartDate(LocalDate startDate) {
+			this.startDate = startDate;
+		}
+		public LocalDate getEndDate() {
+			return endDate;
+		}
+		public void setEndDate(LocalDate endDate) {
+			this.endDate = endDate;
+		}
+		public String getTitle() {
+			return title;
+		}
+		public void setTitle(String title) {
+			this.title = title;
+		}
+		public Pizza getPizza() {
+			return pizza;
+		}
+		public void setPizza(Pizza pizza) {
+			this.pizza = pizza;
+		}
+		
+		@Override
+		public String toString() {
+			
+			return "[" + getId() + "] " + getTitle() 
+				+ ": " + getStartDate() + " ~ " + getEndDate();
+		} 
 
 }

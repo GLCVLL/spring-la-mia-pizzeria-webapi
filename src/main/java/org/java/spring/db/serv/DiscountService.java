@@ -25,8 +25,4 @@ public class DiscountService {
 		
 		discountRepo.save(discount);
 	}
-	public void delete(Discount discount) {
-		
-		discountRepo.delete(discount);
-	}
 }
