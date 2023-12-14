@@ -66,13 +66,13 @@ public class Application implements CommandLineRunner {
 		
 		// PIZZE
 		
-		Pizza p = new Pizza("Napoli", "Classica pizza con pomodoro, mozzarella e acciughe", "url_napoli", 11.99f, tomato, mozzarella);
+		Pizza p = new Pizza("Napoli", "Classica pizza con pomodoro, mozzarella e acciughe", "https://picsum.photos/300?random=2", 11.99f, tomato, mozzarella);
 		
-        pizzaService.save(new Pizza("Margherita", "Classica pizza margherita", "url_margherita", 8.99f, tomato, mozzarella));
-        pizzaService.save(new Pizza("Pepperoni", "Pizza con pepperoni piccanti", "url_pepperoni", 9.99f, tomato, mozzarella, salame));
-        pizzaService.save(new Pizza("Quattro Formaggi", "Pizza con quattro tipi di formaggio", "url_quattro_formaggi", 10.99f, mozzarella, cheese));
-        pizzaService.save(new Pizza("Vegetariana", "Pizza vegetariana con verdure fresche", "url_vegetariana", 9.49f, mozzarella, mushrooms));
-        pizzaService.save(new Pizza("Capricciosa", "Pizza con prosciutto, funghi e carciofi", "url_capricciosa", 11.49f, mozzarella, mushrooms));
+        pizzaService.save(new Pizza("Margherita", "Classica pizza margherita", "https://picsum.photos/300?random=7", 8.99f, tomato, mozzarella));
+        pizzaService.save(new Pizza("Pepperoni", "Pizza con pepperoni piccanti", "https://picsum.photos/300?random=3", 9.99f, tomato, mozzarella, salame));
+        pizzaService.save(new Pizza("Quattro Formaggi", "Pizza con quattro tipi di formaggio", "https://picsum.photos/300?random=6", 10.99f, mozzarella, cheese));
+        pizzaService.save(new Pizza("Vegetariana", "Pizza vegetariana con verdure fresche", "https://picsum.photos/300?random=5", 9.49f, mozzarella, mushrooms));
+        pizzaService.save(new Pizza("Capricciosa", "Pizza con prosciutto, funghi e carciofi", "https://picsum.photos/300?random=4", 11.49f, mozzarella, mushrooms));
         pizzaService.save(p);
         
         discountService.save(new Discount(
